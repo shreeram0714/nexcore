@@ -42,6 +42,7 @@
       color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
+      padding-bottom: 88px;
     }
 
     h1,
@@ -298,8 +299,9 @@
       display: flex;
       align-items: center;
       background:
-        radial-gradient(ellipse 80% 50% at 20% 50%, rgba(240, 165, 0, 0.1), transparent),
-        radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0, 212, 254, 0.08), transparent),
+        radial-gradient(ellipse 80% 50% at 15% 50%, rgba(240, 165, 0, 0.14), transparent),
+        radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0, 212, 254, 0.16), transparent),
+        linear-gradient(120deg, rgba(0, 212, 254, 0.08), transparent 40%),
         #0d1419;
       overflow: hidden;
       padding-top: 130px;
@@ -321,10 +323,17 @@
     }
 
     .hero-title {
-      font-size: clamp(52px, 7vw, 96px);
+      font-size: clamp(58px, 8.2vw, 112px);
       letter-spacing: -3px;
-      max-width: 900px;
+      max-width: 980px;
       margin-bottom: 24px;
+    }
+
+    .hero-title .grad {
+      background: linear-gradient(120deg, #eef0f6 30%, #00d4fe 68%, #f0a500 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .hero-sub {
@@ -337,7 +346,37 @@
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
-      margin-bottom: 52px;
+      margin-bottom: 34px;
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .proof-item {
+      background: rgba(238, 240, 246, 0.04);
+      border: 1px solid rgba(238, 240, 246, 0.12);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .proof-item b {
+      display: block;
+      font-family: "Syne", sans-serif;
+      font-size: 1.5rem;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .proof-item span {
+      color: #ccd5e2;
+      font-size: 0.86rem;
+      letter-spacing: 0.02em;
     }
 
     .hero-badge {
@@ -525,6 +564,25 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
+    }
+
+    .inline-cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(238, 240, 246, 0.12);
+      background: rgba(238, 240, 246, 0.03);
+    }
+
+    .inline-cta p {
+      flex: 1;
+      min-width: 220px;
+      color: #d0d8e4;
+      font-size: 0.96rem;
     }
 
     .project-card {
@@ -926,6 +984,16 @@
       margin-bottom: 12px;
     }
 
+    .project-result {
+      margin-top: 10px;
+      padding: 11px 12px;
+      border: 1px solid rgba(0, 212, 254, 0.3);
+      border-radius: 10px;
+      background: rgba(0, 212, 254, 0.08);
+      color: #d6ecf3;
+      font-size: 0.88rem;
+    }
+
     .stack {
       display: flex;
       flex-wrap: wrap;
@@ -963,6 +1031,58 @@
       background: rgba(0, 212, 255, 0.08);
       border-color: var(--cyan);
       transform: translateX(3px);
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      width: min(920px, calc(100% - 20px));
+      z-index: 998;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 212, 254, 0.22);
+      background: linear-gradient(135deg, rgba(13, 20, 25, 0.96), rgba(18, 29, 36, 0.94));
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(238, 240, 246, 0.08);
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 18px;
+      min-height: auto;
+    }
+
+    .sticky-cta p {
+      color: #dce2ec;
+      font-size: 0.94rem;
+      margin: 0;
+      line-height: 1.5;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      white-space: normal;
+    }
+
+    .sticky-cta b {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+    }
+
+    .sticky-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      flex-shrink: 0;
+      align-items: center;
+    }
+
+    .sticky-actions .btn {
+      padding: 12px 18px;
+      font-size: 0.89rem;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .process {
@@ -1455,6 +1575,10 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-proof {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .hero-trust {
         grid-template-columns: 1fr;
       }
@@ -1474,6 +1598,85 @@
 
       .cta-actions {
         justify-content: flex-start;
+      }
+
+      .sticky-cta {
+        grid-template-columns: 1fr;\n        padding: 14px 16px;
+        gap: 14px;
+      }
+
+      .sticky-cta p {
+        font-size: 0.90rem;
+        line-height: 1.45;
+      }
+
+      .sticky-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .sticky-actions .btn {
+        padding: 11px 14px;
+        font-size: 0.84rem;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .sticky-cta {
+        position: fixed;
+        left: 8px;
+        right: 8px;
+        bottom: 12px;
+        transform: none;
+        width: auto;
+        padding: 12px 14px;
+        gap: 12px;
+      }
+
+      .sticky-cta p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .sticky-cta b {
+        display: inline;
+      }
+
+      .sticky-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .sticky-actions .btn {
+        padding: 10px 12px;
+        font-size: 0.80rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sticky-cta {
+        left: 6px;
+        right: 6px;
+        padding: 11px 12px;
+        gap: 10px;
+      }
+
+      .sticky-cta p {
+        font-size: 0.81rem;
+        line-height: 1.35;
+      }
+
+      .sticky-actions {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+
+      .sticky-actions .btn {
+        padding: 9px 10px;
+        font-size: 0.77rem;
       }
     }
 
@@ -1539,6 +1742,10 @@
         width: 100%;
       }
 
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
       .project-body,
       .panel {
         padding: 18px;
@@ -1573,7 +1780,15 @@
 
       #wa-float {
         right: 18px;
-        bottom: 18px;
+        bottom: 96px;
+      }
+
+      .sticky-actions {
+        width: 100%;
+      }
+
+      .sticky-actions .btn {
+        width: 100%;
       }
     }
   </style>
@@ -1617,13 +1832,20 @@
     <div class="hero-inner">
       <div class="hero-badge tag">Now Accepting New Clients &mdash; Startups &middot; SMBs &middot; Students</div>
       <div class="hero-topline"></div>
-      <h1 class="hero-title reveal">Turn Visitors Into<br />Revenue-Ready Clients.</h1>
+      <h1 class="hero-title reveal">Build a <span class="grad">Premium Digital Presence</span><br />That Wins Better Clients.</h1>
       <p class="hero-sub reveal">
-        NexCore Solutions designs and builds premium digital experiences that attract the right audience, increase trust in seconds, and convert more leads into booked calls and sales.
+        We help growth-focused brands stand out with conversion-ready websites, sharp UX, and engineering that turns attention into enquiries, calls, and predictable revenue.
       </p>
       <div class="hero-actions reveal">
         <a href="#work" class="btn btn-ghost">See Results</a>
         <a href="#contact" class="btn btn-main">Get Started</a>
+      </div>
+
+      <div class="hero-proof reveal">
+        <div class="proof-item"><b>2</b><span>Live Projects Deployed</span></div>
+        <div class="proof-item"><b>4</b><span>Portfolio Case Demonstrations</span></div>
+        <div class="proof-item"><b>5★</b><span>Client Feedback Quality</span></div>
+        <div class="proof-item"><b>2h</b><span>Typical Response Window</span></div>
       </div>
 
       <div class="hero-trust">
@@ -1711,6 +1933,11 @@
           <span class="service-benefit">Own your workflow. Scale without bottlenecks.</span>
         </article>
       </div>
+
+      <div class="inline-cta reveal">
+        <p>Need a tailored scope and timeline for your business?</p>
+        <a href="#contact" class="btn btn-main">Book a Free Strategy Call</a>
+      </div>
     </div>
   </section>
 
@@ -1733,10 +1960,11 @@
             <h3>GrillPark - Restaurant Website</h3>
             <p class="project-title-sub">Live Production Demo</p>
             <p>Premium restaurant website with interactive menu, reservation section, gallery, and mobile-first design. Built to drive foot traffic and online orders.</p>
+            <p class="project-result">Outcome: Premium brand feel with a frictionless booking and enquiry path.</p>
             <div class="stack">
               <span>HTML</span><span>CSS</span><span>JS</span><span>Responsive</span>
             </div>
-            <a class="view-live-btn" href="https://grillpark-demo.vercel.app/" target="_blank" rel="noopener noreferrer">View Live →</a>
+            <a class="view-live-btn" href="https://grillpark-demo.vercel.app/" target="_blank" rel="noopener noreferrer">Visit Live Site →</a>
           </div>
         </article>
 
@@ -1751,10 +1979,11 @@
             <h3>SVS Cars - Auto Dealership Site</h3>
             <p class="project-title-sub">Live Production Demo</p>
             <p>Car dealership website with vehicle showcase, smooth animations, enquiry forms, and a clean professional layout built to generate leads.</p>
+            <p class="project-result">Outcome: Lead-focused structure designed to improve enquiry quality.</p>
             <div class="stack">
               <span>HTML</span><span>CSS</span><span>JS</span><span>Animations</span>
             </div>
-            <a class="view-live-btn" href="https://svs-cars.vercel.app/" target="_blank" rel="noopener noreferrer">View Live →</a>
+            <a class="view-live-btn" href="https://svs-cars.vercel.app/" target="_blank" rel="noopener noreferrer">Visit Live Site →</a>
           </div>
         </article>
 
@@ -1773,6 +2002,7 @@
             <h3>BizTrack - Analytics Dashboard</h3>
             <p class="project-title-sub">Business Analytics Dashboard</p>
             <p>Business analytics dashboard with live charts, inventory tracking, staff performance metrics and automated reporting.</p>
+            <p class="project-result">Use Case: Centralized operations visibility for faster business decisions.</p>
             <div class="stack">
               <span>Vue.js</span><span>Chart.js</span><span>MySQL</span>
             </div>
@@ -1793,11 +2023,17 @@
             <h3>MedBook - Clinic Booking App</h3>
             <p class="project-title-sub">Clinic Booking Platform</p>
             <p>Doctor appointment system with patient management, slot booking, SMS reminders, and integrated billing module.</p>
+            <p class="project-result">Use Case: Reduced scheduling friction and improved patient booking flow.</p>
             <div class="stack">
               <span>Laravel</span><span>PHP</span><span>SMS API</span>
             </div>
           </div>
         </article>
+      </div>
+
+      <div class="inline-cta reveal">
+        <p>Want your project presented like this with clear business outcomes?</p>
+        <a href="#contact" class="btn btn-main">Start Your Project</a>
       </div>
     </div>
   </section>
@@ -1953,7 +2189,7 @@
         </div>
         <div class="cta-actions">
           <a href="#contact" class="btn btn-main">Get Started</a>
-          <a href="https://wa.me/919994523121" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Contact Now</a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Contact Now</a>
         </div>
       </div>
     </div>
@@ -2013,7 +2249,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s7-5.4 7-11a7 7 0 10-14 0c0 5.6 7 11 7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
             <div>
               <b>Location</b>
-              <p>Salem, Tamil Nadu, India</p>
+              <p>Coimbatore, Tamil Nadu, India</p>
             </div>
           </div>
           <div class="response-note">Typical response time: within 2 business hours</div>
@@ -2052,6 +2288,14 @@
       <p class="copyright">© 2026 NexCore Solutions. Built for growth-focused brands.</p>
     </div>
   </footer>
+
+  <div class="sticky-cta reveal" aria-label="Quick project call to action">
+    <p><b>Ready to launch a premium website?</b> Let us map your fastest route to better leads.</p>
+    <div class="sticky-actions">
+      <a href="#contact" class="btn btn-main">Get Started</a>
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Contact Now</a>
+    </div>
+  </div>
 
   <a href="https://wa.me/919876543210" target="_blank" id="wa-float" aria-label="Chat on WhatsApp" rel="noopener noreferrer">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

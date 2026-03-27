@@ -1,0 +1,44 @@
+<svg width="980" height="240" viewBox="0 0 980 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="54" y1="42" x2="202" y2="198" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD773"/>
+      <stop offset="0.52" stop-color="#F0B622"/>
+      <stop offset="1" stop-color="#D79100"/>
+    </linearGradient>
+
+    <linearGradient id="tealGrad" x1="86" y1="38" x2="224" y2="188" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#63E8F7" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#63E8F7" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <linearGradient id="wordGrad" x1="298" y1="56" x2="900" y2="166" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5FAFF"/>
+      <stop offset="1" stop-color="#D6E5EE"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="10" y="8" width="264" height="224" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="4.5" flood-color="#F0B622" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="5.5" flood-color="#57E0F4" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softGlow)">
+    <rect x="34" y="34" width="200" height="172" rx="26" stroke="#EAF5FF" stroke-opacity="0.72" stroke-width="3.2"/>
+    <rect x="46" y="46" width="176" height="148" rx="20" stroke="url(#tealGrad)" stroke-opacity="0.48" stroke-width="1.6"/>
+
+    <path d="M80 58V182" stroke="url(#goldGrad)" stroke-width="17" stroke-linecap="round"/>
+    <path d="M188 58V182" stroke="url(#goldGrad)" stroke-width="17" stroke-linecap="round"/>
+    <path d="M80 70L188 170" stroke="url(#goldGrad)" stroke-width="17" stroke-linecap="round"/>
+
+    <path d="M64 52H94" stroke="#F4FAFF" stroke-opacity="0.9" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M174 188H204" stroke="#F4FAFF" stroke-opacity="0.85" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <text x="298" y="112" fill="url(#wordGrad)" font-family="Syne, Montserrat, Poppins, Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="1.1">NEXCORE</text>
+  <text x="302" y="173" fill="#DBE7EE" fill-opacity="0.95" font-family="DM Sans, Montserrat, Poppins, Arial, sans-serif" font-size="44" font-weight="500" letter-spacing="4.2">SOLUTIONS</text>
+
+  <path d="M302 187H545" stroke="#63E8F7" stroke-opacity="0.34" stroke-width="2" stroke-linecap="round"/>
+  <path d="M562 187H650" stroke="#F0B622" stroke-opacity="0.54" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad" x1="126" y1="86" x2="362" y2="422" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD873"/>
+      <stop offset="0.5" stop-color="#F0B622"/>
+      <stop offset="1" stop-color="#D79000"/>
+    </linearGradient>
+
+    <linearGradient id="tealEdge" x1="120" y1="80" x2="388" y2="406" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#63E8F7" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#63E8F7" stop-opacity="0.12"/>
+    </linearGradient>
+
+    <filter id="monoGlow" x="66" y="66" width="380" height="380" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#F0B622" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#57E0F4" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#monoGlow)">
+    <rect x="96" y="96" width="320" height="320" rx="56" stroke="#EAF5FF" stroke-opacity="0.78" stroke-width="6"/>
+    <rect x="118" y="118" width="276" height="276" rx="42" stroke="url(#tealEdge)" stroke-opacity="0.55" stroke-width="3"/>
+
+    <path d="M164 142V370" stroke="url(#goldGrad)" stroke-width="28" stroke-linecap="round"/>
+    <path d="M348 142V370" stroke="url(#goldGrad)" stroke-width="28" stroke-linecap="round"/>
+    <path d="M164 164L348 352" stroke="url(#goldGrad)" stroke-width="28" stroke-linecap="round"/>
+
+    <path d="M136 132H188" stroke="#F4FAFF" stroke-opacity="0.88" stroke-width="8" stroke-linecap="round"/>
+    <path d="M322 380H374" stroke="#F4FAFF" stroke-opacity="0.84" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

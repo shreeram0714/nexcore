@@ -1,6 +1,11 @@
 ﻿<!doctype html>
 <html lang="en">
   <head>
+
+    
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/03/30/09/20260330090920-CC0INE81.js" defer></script>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NexCore Solutions - Premium Digital Solutions Agency</title>
@@ -1623,21 +1628,26 @@
 
       #wa-float {
         position: fixed;
-        bottom: 32px;
-        right: 32px;
-        width: 56px;
-        height: 56px;
+        bottom: 24px;
+        right: 108px;
+        width: 62px;
+        height: 62px;
         background: #25d366;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 999;
+        z-index: 1001;
         box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
         transition:
           transform 0.2s,
           box-shadow 0.2s;
         color: white;
+      }
+
+      iframe[src*="botpress"],
+      div[id*="botpress"] {
+        z-index: 1002 !important;
       }
 
       #wa-float:hover {
@@ -1781,6 +1791,16 @@
           padding: 10px 12px;
           font-size: 0.8rem;
         }
+
+        #wa-float {
+          display: none;
+        }
+
+        iframe[src*="botpress"],
+        div[id*="botpress"] {
+          right: 16px !important;
+          bottom: 108px !important;
+        }
       }
 
       @media (max-width: 560px) {
@@ -1917,11 +1937,6 @@
 
         .testi-quote {
           font-size: 13px;
-        }
-
-        #wa-float {
-          right: 18px;
-          bottom: 96px;
         }
 
         .sticky-actions {
